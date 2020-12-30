@@ -2,7 +2,6 @@ builds:
   - goos:
     - linux
     - darwin
-    binary: free
 
 brews:
   - tap:

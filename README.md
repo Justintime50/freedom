@@ -31,7 +31,7 @@ brew install freedom
 
 ```
 Usage:
-    free --port 8000
+    freedom --port 8000
 
 Options:
     -help

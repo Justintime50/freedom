@@ -4,16 +4,16 @@ help:
 
 ## install - Install globally from source
 install:
-	go build -o $(go env GOPATH)/bin/free
+	go build -o $(go env GOPATH)/bin/freedom
 
 ## clean - Clean the project
 clean:
 	rm dist
-	rm $(go env GOPATH)/bin/free
+	rm $(go env GOPATH)/bin/freedom
 
 ## build - Build the project
 build:
-	go build -o dist/free
+	go build
 
 ## test - Test the project
 test:

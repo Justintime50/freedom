@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.3.0 (2020-12-30)
+
+* Changes the executable `free` to `freedom` since `free` is already a tool built into Linux
+
 ## v0.2.0 (2020-12-30)
 
 * Refactored the `ports` module to properly accept an integer as an argument
