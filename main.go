@@ -11,7 +11,7 @@ import (
 func main() {
 	// main function that accepts CLI args to invoke different functionality
 	freeFinder := flag.Bool("finder", false, "Close all your macOS Finder Windows.")
-	freeDocker := flag.Bool("docker", false, "Prune your Docker instance")
+	freeDocker := flag.Bool("docker", false, "Prune your Docker instance.")
 	freePort := flag.Bool("port", false, "Free a port of its process (pass a port number as an argument).")
 	flag.Parse()
 
