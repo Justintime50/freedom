@@ -1,4 +1,5 @@
 builds:
+  - id: "free"
   - binary: free
   - goos:
     - linux
