@@ -8,7 +8,7 @@ install:
 
 ## clean - Clean the project
 clean:
-	rm dist/free
+	rm dist
 	rm $(go env GOPATH)/bin/free
 
 ## build - Build the project

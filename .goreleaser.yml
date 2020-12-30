@@ -1,8 +1,6 @@
 builds:
   - goos:
     - linux
-    binary: free
-  - goos:
     - darwin
     binary: free
 
