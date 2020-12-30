@@ -9,11 +9,11 @@ Give your computer the freedom to do more by freeing its resources.
 
 <img src="assets/showcase.png" alt="Showcase">
 
+</div>
+
 Freedom lets you free different resources of your machine so it can do more. Prune Docker, close all Finder windows on macOS, kill processes attached to ports, and more.
 
 **Note:** This package is built for macOS and Linux.
-
-</div>
 
 ## Install
 
