@@ -4,7 +4,7 @@
 
 Give your computer the freedom to do more by freeing its resources.
 
-[![Build](https://github.com/Justintime50/freedom/workflows/Build/badge.svg)](https://github.com/Justintime50/freedom/actions)
+[![Build](https://github.com/Justintime50/freedom/workflows/build/badge.svg)](https://github.com/Justintime50/freedom/actions)
 [![Licence](https://img.shields.io/github/license/justintime50/GitHub-archive)](LICENSE)
 
 <img src="assets/showcase.png" alt="Showcase">
@@ -58,6 +58,9 @@ make clean
 
 # Test the project
 make test
+
+# Lint the project (requires golangci-lint be installed)
+make lint
 ```
 
 ## Attribution

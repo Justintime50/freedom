@@ -19,4 +19,8 @@ build:
 test:
 	go test -v
 
-.PHONY: help install clean build test
+## lint - Lint the project
+lint:
+	golangci-lint run
+
+.PHONY: help install clean build test lint
