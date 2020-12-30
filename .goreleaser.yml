@@ -5,7 +5,7 @@ release:
   prerelease: auto
   
 builds:
-  binary: free
+  - binary: free
   - env:
       - CGO_ENABLED=0
     goos:
