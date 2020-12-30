@@ -1,16 +1,8 @@
-release:
-  github:
-    owner: Justintime50
-    name: freedom
-  prerelease: auto
-  
 builds:
   - binary: free
-  - env:
-      - CGO_ENABLED=0
-    goos:
-      - linux
-      - darwin
+  - goos:
+    - linux
+    - darwin
 
 brews:
   - tap:
