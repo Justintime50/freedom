@@ -3,6 +3,13 @@ name: Build
 on: [push, pull_request, release]
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Run Golangci Linter
+        uses: golangci/golangci-lint-action@v2
   build:
     name: Build
     runs-on: ${{ matrix.os }}
@@ -15,7 +22,7 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: ${{ matrix.go }}
-      - name: Check out code into the Go module directory
+      - name: Checkout Repository
         uses: actions/checkout@v2
       - name: Build
         run: make build

@@ -2,6 +2,7 @@ package docker
 
 import (
 	"fmt"
+	"os"
 	"os/exec"
 )
 
@@ -11,7 +12,7 @@ func PruneDocker() {
 	err := exec.Command("/bin/sh", "-c", "docker system prune -f").Run()
 	if err != nil {
 		fmt.Printf("%s\n", "Failed to Prune Docker.")
-		return
+		os.Exit(1)
 	}
 	fmt.Printf("%s\n", "Docker instance pruned!")
 }

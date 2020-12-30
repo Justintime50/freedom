@@ -40,7 +40,7 @@ Options:
         Prune your Docker instance.
     -finder
         Close all your macOS Finder Windows.
-    -port
+    -port int
         Free a port of its process (pass a port number as an argument).
 ```
 
