@@ -27,13 +27,17 @@ brew install freedom
 
 ## Usage
 
+**Note:** Single or double dashes can be used with options.
+
 ```
 Usage:
     free --port 8000
 
 Options:
+    -help
+        Show this output.
     -docker
-        Prune your Docker instance
+        Prune your Docker instance.
     -finder
         Close all your macOS Finder Windows.
     -port
