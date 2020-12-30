@@ -1,9 +1,10 @@
 builds:
-  - id: "free"
-  - binary: free
   - goos:
     - linux
+    binary: free
+  - goos:
     - darwin
+    binary: free
 
 brews:
   - tap:
