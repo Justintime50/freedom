@@ -8,13 +8,12 @@ install:
 
 ## clean - Clean the project
 clean:
-	rm free
-	rm freedom
+	rm dist/free
 	rm $(go env GOPATH)/bin/free
 
 ## build - Build the project
 build:
-	go build -o free
+	go build -o dist/free
 
 ## test - Test the project
 test:
