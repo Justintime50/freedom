@@ -5,8 +5,8 @@ import (
 	"os/exec"
 )
 
-// Free your Mac of all Finder windows
-func macos() {
+// FreeFinderWindows frees your Mac of all Finder windows
+func FreeFinderWindows() {
 	err := exec.Command("osascript", "-e", `tell application "Finder" to close windows`).Run()
 	if err != nil {
 		fmt.Printf("%s\n", "Failed to close all finder windows.")
