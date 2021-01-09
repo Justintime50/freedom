@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.3.1 (2021-01-09)
+
+* Release bump for automated releasing, no alterations of code
+
 ## v0.3.0 (2020-12-30)
 
 * Changes the executable `free` to `freedom` since `free` is already a tool built into Linux
