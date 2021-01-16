@@ -1,8 +1,11 @@
 # CHANGELOG
 
-## v0.3.1 (2021-01-09)
+## v0.4.0 (2021-01-15)
 
-* Release bump for automated releasing, no alterations of code
+* Replaces `fmt.Printf` with `fmt.Println`
+* Added `os.Exit(1)` when no flag is passed after the error message
+* Improved error handling by returning status codes and messages where applicable
+* Full unit tests and code coverage
 
 ## v0.3.0 (2020-12-30)
 

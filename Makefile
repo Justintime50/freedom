@@ -17,7 +17,11 @@ build:
 
 ## test - Test the project
 test:
-	go test -v
+	go clean -testcache && go test ./...
+
+## coverage - Get test coverage
+coverage: 
+	go clean -testcache && go test ./... -cover -coverprofile=covprofile
 
 ## lint - Lint the project
 lint:

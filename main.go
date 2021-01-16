@@ -6,25 +6,28 @@ import (
 	"github.com/Justintime50/freedom/src/docker"
 	"github.com/Justintime50/freedom/src/macos"
 	"github.com/Justintime50/freedom/src/ports"
+	"os"
+	"os/exec"
 )
 
 func main() {
 	// main function that accepts CLI args to invoke different functionality
-	freeFinder := flag.Bool("finder", false, "Close all your macOS Finder Windows.")
-	freeDocker := flag.Bool("docker", false, "Prune your Docker instance.")
-	freePort := flag.Int("port", 0, "Free a port of its process (pass a port number as an argument).")
+	closeMacosFinderWindows := flag.Bool("finder", false, "Close all your macOS Finder Windows.")
+	pruneDocker := flag.Bool("docker", false, "Prune your Docker instance.")
+	killPort := flag.Int("port", 0, "Free a port of its process (pass a port number as an argument).")
 	flag.Parse()
 
-	if *freeFinder {
-		macos.FreeFinderWindows()
+	if *closeMacosFinderWindows {
+		macos.FreeFinderWindows(exec.Command)
 		return
-	} else if *freeDocker {
-		docker.PruneDocker()
+	} else if *pruneDocker {
+		docker.Prune(exec.Command)
 		return
-	} else if *freePort != 0 {
-		ports.FreePort(*freePort)
+	} else if *killPort != 0 {
+		ports.Kill(exec.Command, *killPort)
 		return
 	}
 
-	fmt.Printf("%s\n", "No action taken as no flag was passed.")
+	fmt.Println("No action taken as no flag was passed.")
+	os.Exit(1)
 }

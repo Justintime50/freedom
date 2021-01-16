@@ -5,6 +5,7 @@
 Give your computer the freedom to do more by freeing its resources.
 
 [![Build](https://github.com/Justintime50/freedom/workflows/build/badge.svg)](https://github.com/Justintime50/freedom/actions)
+[![Coverage Status](https://coveralls.io/repos/github/Justintime50/freedom/badge.svg?branch=master)](https://coveralls.io/github/Justintime50/freedom?branch=master)
 [![Licence](https://img.shields.io/github/license/justintime50/GitHub-archive)](LICENSE)
 
 <img src="assets/showcase.png" alt="Showcase">
@@ -12,8 +13,6 @@ Give your computer the freedom to do more by freeing its resources.
 </div>
 
 Freedom lets you free different resources of your machine so it can do more. Prune Docker, close all Finder windows on macOS, kill processes attached to ports, and more.
-
-**Note:** This package is built for macOS and Linux.
 
 ## Install
 
@@ -58,6 +57,9 @@ make clean
 
 # Test the project
 make test
+
+## Get test coverage
+make coverage
 
 # Lint the project (requires golangci-lint be installed)
 make lint

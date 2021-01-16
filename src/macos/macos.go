@@ -1,17 +1,24 @@
 package macos
 
 import (
+	"bytes"
 	"fmt"
-	"os"
 	"os/exec"
 )
 
+type execContext = func(name string, arg ...string) *exec.Cmd
+
 // FreeFinderWindows frees your Mac of all Finder windows
-func FreeFinderWindows() {
-	err := exec.Command("osascript", "-e", `tell application "Finder" to close windows`).Run()
+func FreeFinderWindows(cmdContext execContext) (*bytes.Buffer, error) {
+	cmd := cmdContext("osascript", "-e", `tell application "Finer" to close windows`)
+	var outb bytes.Buffer
+	cmd.Stdout = &outb
+	err := cmd.Run()
 	if err != nil {
-		fmt.Printf("%s\n", "Failed to close all finder windows.")
-		os.Exit(1)
+		fmt.Println(fmt.Sprintf("Failed to close all finder windows: %s", err))
+		return nil, err
 	}
-	fmt.Printf("%s\n", "macOS Finder windows closed!")
+
+	fmt.Println("macOS Finder windows closed!")
+	return &outb, nil
 }

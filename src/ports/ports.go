@@ -1,20 +1,28 @@
 package ports
 
 import (
+	"bytes"
 	"fmt"
-	"os"
 	"os/exec"
 	"strconv"
 )
 
-// FreePort frees a port of its process
-func FreePort(portNumber int) {
+type execContext = func(name string, arg ...string) *exec.Cmd
+
+// Kill frees a port of its process
+func Kill(cmdContext execContext, portNumber int) (*bytes.Buffer, error) {
 	port := strconv.Itoa(portNumber)
 	pid := fmt.Sprintf("$(lsof -t -i:%s)", port)
-	err := exec.Command("/bin/sh", "-c", fmt.Sprintf("kill %s", pid)).Run()
+
+	cmd := cmdContext("/bin/sh", "-c", fmt.Sprintf("kill %s", pid))
+	var outb bytes.Buffer
+	cmd.Stdout = &outb
+	err := cmd.Run()
 	if err != nil {
-		fmt.Printf("%s\n", fmt.Sprintf("Cannot free port %s.", port))
-		os.Exit(1)
+		fmt.Println(fmt.Sprintf("Could not free port %s.", port))
+		return nil, err
 	}
-	fmt.Printf("%s\n", fmt.Sprintf("Port %s freed!", port))
+
+	fmt.Println(fmt.Sprintf("Port %s freed!", port))
+	return &outb, nil
 }
