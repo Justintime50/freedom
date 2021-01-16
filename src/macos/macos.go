@@ -15,7 +15,7 @@ func FreeFinderWindows(cmdContext execContext) (*bytes.Buffer, error) {
 	cmd.Stdout = &outb
 	err := cmd.Run()
 	if err != nil {
-		fmt.Println(fmt.Sprintf("Failed to close all finder windows: %s", err))
+		fmt.Printf("Failed to close all finder windows: %s\n", err)
 		return nil, err
 	}
 

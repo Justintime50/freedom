@@ -18,13 +18,13 @@ func main() {
 	flag.Parse()
 
 	if *closeMacosFinderWindows {
-		macos.FreeFinderWindows(exec.Command)
+		_, _ = macos.FreeFinderWindows(exec.Command)
 		return
 	} else if *pruneDocker {
-		docker.Prune(exec.Command)
+		_, _ = docker.Prune(exec.Command)
 		return
 	} else if *killPort != 0 {
-		ports.Kill(exec.Command, *killPort)
+		_, _ = ports.Kill(exec.Command, *killPort)
 		return
 	}
 

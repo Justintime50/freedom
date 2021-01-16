@@ -16,10 +16,10 @@ func Prune(cmdContext execContext) (*bytes.Buffer, error) {
 	cmd.Stdout = &outb
 	err := cmd.Run()
 	if err != nil {
-		fmt.Println(fmt.Sprintf("Failed to Prune Docker: %s", err))
+		fmt.Printf("Failed to Prune Docker: %s\n", err)
 		return nil, err
 	}
 
-	fmt.Println(fmt.Sprintf("Docker instance pruned!\n%s", outb.String()))
+	fmt.Printf("Docker instance pruned!\n%s\n", outb.String())
 	return &outb, nil
 }

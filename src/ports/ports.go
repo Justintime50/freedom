@@ -19,10 +19,10 @@ func Kill(cmdContext execContext, portNumber int) (*bytes.Buffer, error) {
 	cmd.Stdout = &outb
 	err := cmd.Run()
 	if err != nil {
-		fmt.Println(fmt.Sprintf("Could not free port %s.", port))
+		fmt.Printf("Could not free port %s.\n", port)
 		return nil, err
 	}
 
-	fmt.Println(fmt.Sprintf("Port %s freed!", port))
+	fmt.Printf("Port %s freed!\n", port)
 	return &outb, nil
 }

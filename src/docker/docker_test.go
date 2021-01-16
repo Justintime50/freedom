@@ -1,14 +1,13 @@
 package docker
 
 import (
-	"fmt"
 	"os"
 	"os/exec"
 	"testing"
 )
 
 const (
-	testStdoutValue = "Total reclaimed space: 0B\n"
+	mockStdout = "Total reclaimed space: 0B\n"
 )
 
 func TestPruneSuccess(t *testing.T) {
@@ -18,9 +17,13 @@ func TestPruneSuccess(t *testing.T) {
 		return
 	}
 
+	// TODO: Assert the process was called with the right commands/args
+
+	// Check to make sure the stdout is returned properly
+	// Note: value matching is not checked since the command is not run
 	stdoutStr := stdout.String()
-	if stdoutStr != testStdoutValue {
-		t.Errorf("stdout mismatch:\n%s\n vs \n%s", stdoutStr, testStdoutValue)
+	if stdoutStr != mockStdout {
+		t.Errorf("stdout mismatch:\n%s\n vs \n%s", stdoutStr, mockStdout)
 	}
 }
 
@@ -57,7 +60,7 @@ func TestPruneProcessSuccess(t *testing.T) {
 	if os.Getenv("GO_TEST_PROCESS") != "1" {
 		return
 	}
-	fmt.Fprintf(os.Stdout, testStdoutValue)
+	os.Stdout.WriteString(mockStdout)
 	os.Exit(0)
 }
 

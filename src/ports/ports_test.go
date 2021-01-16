@@ -1,14 +1,13 @@
 package ports
 
 import (
-	"fmt"
 	"os"
 	"os/exec"
 	"testing"
 )
 
 const (
-	testStdoutValue = "Total reclaimed space: 0B\n"
+	testStdoutValue = ""
 )
 
 func TestKillSuccess(t *testing.T) {
@@ -17,6 +16,8 @@ func TestKillSuccess(t *testing.T) {
 		t.Error(err)
 		return
 	}
+
+	// TODO: Assert the process was called with the right commands/args
 
 	stdoutStr := stdout.String()
 	if stdoutStr != testStdoutValue {
@@ -57,7 +58,7 @@ func TestKillProcessSuccess(t *testing.T) {
 	if os.Getenv("GO_TEST_PROCESS") != "1" {
 		return
 	}
-	fmt.Fprintf(os.Stdout, testStdoutValue)
+	os.Stdout.WriteString(testStdoutValue)
 	os.Exit(0)
 }
 
