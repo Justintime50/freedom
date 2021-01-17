@@ -3,14 +3,12 @@ package ports
 import (
 	"bytes"
 	"fmt"
-	"os/exec"
+	"github.com/justintime50/mockcmd/mockcmd"
 	"strconv"
 )
 
-type execContext = func(name string, arg ...string) *exec.Cmd
-
 // Kill frees a port of its process
-func Kill(cmdContext execContext, portNumber int) (*bytes.Buffer, error) {
+func Kill(cmdContext mockcmd.ExecContext, portNumber int) (*bytes.Buffer, error) {
 	port := strconv.Itoa(portNumber)
 	pid := fmt.Sprintf("$(lsof -t -i:%s)", port)
 

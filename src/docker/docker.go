@@ -3,13 +3,11 @@ package docker
 import (
 	"bytes"
 	"fmt"
-	"os/exec"
+	"github.com/justintime50/mockcmd/mockcmd"
 )
 
-type execContext = func(name string, arg ...string) *exec.Cmd
-
 // Prune frees your Docker instance of all unused containers, networks, images (dangling and unreferenced) and optionally, volumes
-func Prune(cmdContext execContext) (*bytes.Buffer, error) {
+func Prune(cmdContext mockcmd.ExecContext) (*bytes.Buffer, error) {
 	// TODO: Allow the user to pass in options such as "-a" or "--volumes"
 	cmd := cmdContext("/bin/sh", "-c", "docker system prune -f")
 	var outb bytes.Buffer

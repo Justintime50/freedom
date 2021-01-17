@@ -13,7 +13,7 @@ clean:
 
 ## build - Build the project
 build:
-	go build
+	go build -o dist/freedom
 
 ## test - Test the project
 test:

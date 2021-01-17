@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.4.1 (2021-01-16)
+
+* Removed testing framework and replaced with `mockcmd`
+
 ## v0.4.0 (2021-01-15)
 
 * Replaces `fmt.Printf` with `fmt.Println`

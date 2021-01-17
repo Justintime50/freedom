@@ -3,13 +3,11 @@ package macos
 import (
 	"bytes"
 	"fmt"
-	"os/exec"
+	"github.com/justintime50/mockcmd/mockcmd"
 )
 
-type execContext = func(name string, arg ...string) *exec.Cmd
-
 // FreeFinderWindows frees your Mac of all Finder windows
-func FreeFinderWindows(cmdContext execContext) (*bytes.Buffer, error) {
+func FreeFinderWindows(cmdContext mockcmd.ExecContext) (*bytes.Buffer, error) {
 	cmd := cmdContext("osascript", "-e", `tell application "Finer" to close windows`)
 	var outb bytes.Buffer
 	cmd.Stdout = &outb
