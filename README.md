@@ -4,7 +4,7 @@
 
 Give your computer the freedom to do more by freeing its resources.
 
-[![Build](https://github.com/Justintime50/freedom/workflows/build/badge.svg)](https://github.com/Justintime50/freedom/actions)
+[![Build Status](https://github.com/Justintime50/freedom/workflows/build/badge.svg)](https://github.com/Justintime50/freedom/actions)
 [![Coverage Status](https://coveralls.io/repos/github/Justintime50/freedom/badge.svg?branch=main)](https://coveralls.io/github/Justintime50/freedom?branch=main)
 [![Licence](https://img.shields.io/github/license/justintime50/freedom)](LICENSE)
 
