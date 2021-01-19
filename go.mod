@@ -2,4 +2,4 @@ module github.com/Justintime50/freedom
 
 go 1.15
 
-require github.com/justintime50/mockcmd v0.1.0
+require github.com/justintime50/mockcmd v0.2.0
