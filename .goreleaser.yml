@@ -1,15 +1,15 @@
 builds:
   - goos:
-    - linux
-    - darwin
+      - linux
+      - darwin
 
 brews:
   - tap:
       owner: Justintime50
       name: homebrew-formulas
     folder: formula
-    homepage: 'https://github.com/Justintime50/freedom'
-    description: 'Give your computer the freedom to do more'
+    homepage: "https://github.com/Justintime50/freedom"
+    description: "Give your computer the freedom to do more"
     commit_author:
       name: Justintime50
-      email: justinpaulhammond@gmail.com
+      email: 39606064+Justintime50@users.noreply.github.com
