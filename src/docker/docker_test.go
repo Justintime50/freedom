@@ -1,9 +1,10 @@
 package docker
 
 import (
-	"github.com/justintime50/mockcmd/mockcmd"
 	"os"
 	"testing"
+
+	"github.com/justintime50/mockcmd/mockcmd"
 )
 
 func TestPruneSuccess(t *testing.T) {

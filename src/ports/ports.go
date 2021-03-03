@@ -3,8 +3,9 @@ package ports
 import (
 	"bytes"
 	"fmt"
-	"github.com/justintime50/mockcmd/mockcmd"
 	"strconv"
+
+	"github.com/justintime50/mockcmd/mockcmd"
 )
 
 // Kill frees a port of its process

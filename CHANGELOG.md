@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.4.2 (2021-03-03)
+
+* Bumping release to add support for `ARM macOS`
+* Adds support for `Go 1.16`
+
 ## v0.4.1 (2021-01-16)
 
 * Removed testing framework and replaced with `mockcmd`

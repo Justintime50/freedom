@@ -3,6 +3,7 @@ package macos
 import (
 	"bytes"
 	"fmt"
+
 	"github.com/justintime50/mockcmd/mockcmd"
 )
 

@@ -1,9 +1,10 @@
 package ports
 
 import (
-	"github.com/justintime50/mockcmd/mockcmd"
 	"os"
 	"testing"
+
+	"github.com/justintime50/mockcmd/mockcmd"
 )
 
 func TestKillSuccess(t *testing.T) {

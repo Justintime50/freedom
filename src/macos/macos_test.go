@@ -1,9 +1,10 @@
 package macos
 
 import (
-	"github.com/justintime50/mockcmd/mockcmd"
 	"os"
 	"testing"
+
+	"github.com/justintime50/mockcmd/mockcmd"
 )
 
 func TestFreeFinderWindowsSuccess(t *testing.T) {
